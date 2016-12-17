@@ -80,7 +80,7 @@ insert : comparable -> a -> LruCache comparable a -> LruCache comparable a
 insert key value cache =
     let
         nextItems =
-            if cache.counter >= cache.maximum then
+            if Dict.size cache.items >= cache.maximum then
                 let
                     keyToRemove =
                         cache.items
