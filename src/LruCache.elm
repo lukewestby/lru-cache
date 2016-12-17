@@ -91,8 +91,8 @@ insert key value cache =
                     case keyToRemove of
                         Just removedKey ->
                             cache.items
-                                |> Dict.insert key ( value, cache.counter )
                                 |> Dict.remove removedKey
+                                |> Dict.insert key ( value, cache.counter )
 
                         Nothing ->
                             cache.items
